@@ -29,11 +29,12 @@ public class ClientThread extends Thread{
 		
 		try {
 			
+			
 			//	Create the BufferedReader
 			reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			//	Creating the output Buffered Reader
 			output = new BufferedOutputStream(socket.getOutputStream());
-			
+						
 			//Read from file
 			String fileName = reader.readLine();
 			System.out.println("File name " + fileName + " has been requested by " 

@@ -11,13 +11,48 @@ package fileTransfer;
 
 import java.io.*;
 import java.net.*;
+import java.util.Scanner;
 
 
 
 
 public class Client {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		
+		
+		mainMenu();
+	}//	End main
+	
+	public static void mainMenu() {
+		 //setting choice to -1, this will make it to enter while loop
+	     int choice = -1;
+	     Scanner scanchoice = new Scanner(System.in);
+
+	    while(choice < 1 || choice > 3){
+
+	            System.out.println("\tPlease Enter \n1 To use networking tools \n2 To connect to server "
+	            		+ "\n3 To go exit");
+	            if(scanchoice.hasNextInt())
+	            choice = scanchoice.nextInt();
+
+	    }
+
+	     switch(choice){
+	        case 1:
+	           Tools.toolsMenu();
+	           break;
+	        case 2:
+	        	connect();
+	           break;
+	        case 3:
+	           System.exit(0);
+	           break;
+	   }
+	    scanchoice.close();
+	}
+	
+	public static void connect() {
 		
 		try {
 			
@@ -79,12 +114,12 @@ public class Client {
 			}//	End else
 			
 			socket.close();
-			
+						
 		}//	End try
 		catch(Exception e) {
 			System.out.println(e.toString());
 		}//	End Exception catch
-
-	}//	End main
+	}
+	
 	
 }//	End Client
