@@ -45,12 +45,12 @@ public class Ping {
 			}//	End if
 			else {
 				System.out.println("Host is unreachable");
-			}//	End else
-				
+			}//	End else	
 		}//	End try
 		catch(Exception e) {
 			System.out.println(e.toString());
 		}//	End catch
+		// Go back to the toolsMenu
 		Tools.toolsMenu();
 	}//	End main
 

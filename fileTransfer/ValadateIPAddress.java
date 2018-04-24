@@ -9,13 +9,7 @@
 package fileTransfer;
 
 public class ValadateIPAddress {
-	
-	public static void main(String[] args) {
-		System.out.println(ValadateIPAddress.checkIP("192.168.1.60"));
 		
-	}//	End main
-	
-	
 	public static boolean checkIP(String IPAddress) {
 		String []numbers = IPAddress.split("\\.");
 		

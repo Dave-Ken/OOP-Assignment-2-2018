@@ -19,24 +19,23 @@ import java.util.Scanner;
 public class Client {
 
 	public static void main(String[] args) throws Exception {
-		
-		
+	
 		mainMenu();
 	}//	End main
 	
 	public static void mainMenu() {
+		
 		 //setting choice to -1, this will make it to enter while loop
 	     int choice = -1;
-	     Scanner scanchoice = new Scanner(System.in);
+	     Scanner scanChoice = new Scanner(System.in);
 
 	    while(choice < 1 || choice > 3){
 
-	            System.out.println("\tPlease Enter \n1 To use networking tools \n2 To connect to server "
+	            System.out.println("\n\tPlease Enter \n1 To use networking tools \n2 To connect to server "
 	            		+ "\n3 To go exit");
-	            if(scanchoice.hasNextInt())
-	            choice = scanchoice.nextInt();
-
-	    }
+	            if(scanChoice.hasNextInt())
+	            choice = scanChoice.nextInt();
+	    }// End while
 
 	     switch(choice){
 	        case 1:
@@ -46,11 +45,12 @@ public class Client {
 	        	connect();
 	           break;
 	        case 3:
+	        	System.out.println("Now Closing");
 	           System.exit(0);
 	           break;
-	   }
-	    scanchoice.close();
-	}
+	   }// End switch
+	    scanChoice.close();
+	}// End mainMenu
 	
 	public static void connect() {
 		
@@ -101,8 +101,7 @@ public class Client {
 					//	Acts as a download notifier
 					System.out.println(".");
 					outputFile.write(buffer, 0, byteRead);
-					outputFile.flush();
-					
+					outputFile.flush();	
 				}//	End while
 				
 				System.out.println("");
@@ -112,14 +111,11 @@ public class Client {
 			else {
 				System.out.println("File not on server");
 			}//	End else
-			
 			socket.close();
 						
 		}//	End try
 		catch(Exception e) {
 			System.out.println(e.toString());
 		}//	End Exception catch
-	}
-	
-	
+	}// End connect	
 }//	End Client
