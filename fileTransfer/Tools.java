@@ -16,9 +16,10 @@ public class Tools {
 	     int choice = -1;
 	     Scanner scanChoice = new Scanner(System.in);
 	     scanChoice.reset();
-	    while(choice < 1 || choice > 4){
+	    while(choice < 1 || choice > 5){
 	            System.out.println("\n\tPlease Enter \n1 To Ping a device \n2 To use Port Scanner "
-	            					+ "\n3 To Check server IP address \n4 To go back to main");
+	            					+ "\n3 Get server IP address \n4 To Find your Network information "
+	            					+ "\n5 To go back to main");
 	            if(scanChoice.hasNextInt())
 	            choice = scanChoice.nextInt();
 
@@ -32,9 +33,11 @@ public class Tools {
 	        	scannerMenu();
 	           break;
 	        case 3:
-	        	INetAddress.iNetAddress();
+	        	INetAddress.RemoteINetAddress();
 	        	break;
 	        case 4:
+	        	INetAddress.myINetAddress();
+	        case 5:
 	        	Client.mainMenu();
 	           break;
 	   }// End switch

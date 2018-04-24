@@ -8,35 +8,40 @@
 package fileTransfer;
 import java.io.*;
 import java.net.*;
-import java.util.Scanner;
 
 public class INetAddress {
 
-	public static void iNetAddress() {
+	public static void RemoteINetAddress() {
 		
 		
 		try {
 			System.out.println("Enter server domain name");
-			String name = "dit.ie";
-			Scanner serverName = new Scanner(System.in);
-			name = serverName.next();
-			
-			// get localHost details and print info
-			InetAddress address = InetAddress.getLocalHost();
-			System.out.println(address.getHostAddress()); // Print host IP address
-			System.out.println(address.getHostName());//	Print host name
-			
-			
-			// get any computer on the Internets details and print info
+			String name = " ";
+			InputStreamReader input = new InputStreamReader(System.in);
+			BufferedReader reader = new BufferedReader(input);
+			name = reader.readLine();
+		
+			// get any computer on the Internet's details and print info
 			InetAddress address2 = InetAddress.getByName(name);
-			System.out.println(address2.getHostAddress());
-			System.out.println(address2.getHostName());
-			serverName.reset();
-			serverName.close();
+			System.out.println("The IP address for " + address2.getHostName() + " is " +address2.getHostAddress());
 			Tools.toolsMenu();
 		}// End try
 		catch(IOException e) {
 			System.out.println(e.toString());
 		}//	End catch
 	}//	End iNetAddress
+	
+	public static void myINetAddress() {
+			
+		try {
+			// get localHost details and print info
+			InetAddress address = InetAddress.getLocalHost();
+			System.out.println("Your devices name on the network is " + address.getHostName());//Print host name
+			System.out.println("Your IP address is " + address.getHostAddress()); // Print host IP address
+			Tools.toolsMenu();
+		}// End try
+		catch(IOException e) {
+			System.out.println(e.toString());
+		}//	End catch
+	}//	End myINetAddress
 }//	End INetAddress

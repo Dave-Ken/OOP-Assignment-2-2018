@@ -18,9 +18,17 @@ public class Ping {
 	
 		
 		try {
-			String hostAddress = "google.com";
+			 
+			System.out.println("Enter an IP address to ping");
+			String ping = "";
+			InputStreamReader input = new InputStreamReader(System.in);
+			BufferedReader reader = new BufferedReader(input);
+		    ping = reader.readLine();
+		    
+			String hostAddress = ping;
 			InetAddress host = InetAddress.getByName(hostAddress);
-			System.out.println(host.isReachable(1000)); // Try to connect to the host for 1000ms
+			System.out.println("Please Wait");
+			host.isReachable(1000); // Try to connect to the host for 1000ms
 			
 			/* The Process class allows for operating system commands to be run in a sub process 
 			 * this will allow for the ping command to be run from the CMD	 
@@ -46,6 +54,7 @@ public class Ping {
 			else {
 				System.out.println("Host is unreachable");
 			}//	End else	
+			
 		}//	End try
 		catch(Exception e) {
 			System.out.println(e.toString());
