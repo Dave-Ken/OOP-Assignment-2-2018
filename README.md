@@ -17,16 +17,16 @@
 	this means that clients don't need to queue for access to the server. This file is also responsible for finding the
 	files the client is looking for and sending the file.
 	
-	Client.java this file creates a socket and establishes the connection to the server. Its responsible for requesting the file
-	the user is looking for. There is also an option to use the trouble shooting tools.
+	Client.java this file creates a socket and establishes the connection to the server. Its responsible for requesting 
+	the file the user is looking for. There is also an option to use the trouble shooting tools.
 	
 	ValadateIPAdress.java will ensure that the IP address the user is trying to connect to is in a valid IP address format
 	before trying to connect to the server.
 	
 	Tools.java is just a menu that keeps the connections to the networking tools in order.
 	
-	Ping.java this file will allow the user to ping the server they are trying to connect to, to do this a second process needs
-	to be created that can use CMD commands.
+	Ping.java this file will allow the user to ping the server they are trying to connect to, to do this a second process 
+	needs to be created that can use CMD commands.
 	
 	LocalPortScanner.java this will allow the user to find ports on there device that are open.
 	
