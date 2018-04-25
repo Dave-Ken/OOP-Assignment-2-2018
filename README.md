@@ -34,4 +34,6 @@
 	
 	INetAddress.java this will allow the user to query there IP address and domain server IP addresses.
 	
+	NetworkInterfaceClass.java will print a list of all network connections on the device
+	
 All work was done by David Kenny.
