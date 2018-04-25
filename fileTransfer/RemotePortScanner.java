@@ -89,13 +89,14 @@ public class RemotePortScanner {
 		
 		
 		//	Start checking for valid ports to use for connection
-		
+		int openPort = 0;
 		int port = fromPort;	// start with fromPort value
 		System.out.println("Sanning ports");
 		while(port >= fromPort && port <= toPort) {
 			try {
 			Socket socket = new Socket(targetIP, port);
 			System.out.println("Port " + port + " is in a listening state");
+			openPort++; 
 			socket.close();//	Close socket
 			}//	End try
 			catch(UnknownHostException e1) {
@@ -108,7 +109,7 @@ public class RemotePortScanner {
 				System.out.println(e.toString());
 			}//	End catch
 			port++;
-			if(port > toPort) {
+			if(port > toPort && openPort == 0) {
 				System.out.println("");
 				System.out.println("No open ports with in the specifide range");
 			}//	End if
