@@ -16,10 +16,10 @@ public class Tools {
 	     int choice = -1;
 	     Scanner scanChoice = new Scanner(System.in);
 	     scanChoice.reset();
-	    while(choice < 1 || choice > 5){
+	    while(choice < 1 || choice > 6){
 	            System.out.println("\n\tPlease Enter \n1 To Ping a device \n2 To use Port Scanner "
 	            					+ "\n3 Get server IP address \n4 To Find your Network information "
-	            					+ "\n5 To go back to main");
+	            					+ "\n5 To find your network connections \n6 To go back to main");
 	            //ensuring the user input an int to prevent an infinite loop
 	            if(scanChoice.hasNextInt()) {
 	            choice = scanChoice.nextInt();
@@ -42,6 +42,8 @@ public class Tools {
 	        case 4:
 	        	INetAddress.myINetAddress(); // Get network info of the device running the client
 	        case 5:
+	        	NetworkInterfaceClass.searchNetworkInterface(); // get info on all network connections on client device
+	        case 6:
 	        	Client.mainMenu(); // Go back to the main menu
 	           break;
 	   }// End switch
