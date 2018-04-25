@@ -1,14 +1,14 @@
 # OOP-Assignment-2-2018
-
-The Team Name is Dave
-The project name is fileTransfer
-Them member David Kenny c16765119
-
-The project is a multi-threaded FTP server & accompanying client along with several netwoking tools
-The applications where programmed using Java with Eclipse as the IDE of choice & Git is a source control management 
-system.
-
-Files:
+	
+	The Team Name is Dave
+	The project name is fileTransfer
+	Them member David Kenny c16765119
+	
+	The project is a multi-threaded FTP server & accompanying client along with several netwoking tools
+	The applications where programmed using Java with Eclipse as the IDE of choice & Git is a source control management 
+	system.
+	
+	Files:
 
 	Server.java this is the main file for the server it keeps sets up the server socket as each client trys to 
 	connect server.java creates a server socket and requests a new thread to handle the rest of the work.
