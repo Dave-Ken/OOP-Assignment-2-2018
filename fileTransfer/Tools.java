@@ -20,8 +20,12 @@ public class Tools {
 	            System.out.println("\n\tPlease Enter \n1 To Ping a device \n2 To use Port Scanner "
 	            					+ "\n3 Get server IP address \n4 To Find your Network information "
 	            					+ "\n5 To go back to main");
-	            if(scanChoice.hasNextInt())
+	            if(scanChoice.hasNextInt()) {
 	            choice = scanChoice.nextInt();
+	            }
+	            if(scanChoice.nextLine() != null) {
+	            	//Ignore char values
+	            	}
 
 	    }// End while
 
@@ -54,8 +58,12 @@ public class Tools {
 
 	            System.out.println("\n\tPlease Enter \n1 To scan this devices ports \n2 To Scan another "
 	            					+ "\n3 To go back to main");
-	            if(scanChoice.hasNextInt())
-	            choice = scanChoice.nextInt();
+	            if(scanChoice.hasNextInt()) {
+		            choice = scanChoice.nextInt();
+		            }
+		            if(scanChoice.nextLine() != null) {
+		            	//Ignore char values
+		            	}
 	    }// End while
 
 	     switch(choice){

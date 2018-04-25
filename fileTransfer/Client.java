@@ -33,8 +33,12 @@ public class Client {
 
 	            System.out.println("\n\tPlease Enter \n1 To use networking tools \n2 To connect to server "
 	            		+ "\n3 To go exit");
-	            if(scanChoice.hasNextInt())
+	            if(scanChoice.hasNextInt()) {
 	            choice = scanChoice.nextInt();
+	            }
+	            if(scanChoice.nextLine() != null) {
+	            	//Ignore char values
+	            	}
 	    }// End while
 
 	     switch(choice){
