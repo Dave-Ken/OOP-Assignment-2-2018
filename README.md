@@ -1,11 +1,5 @@
 # OOP-Assignment-2-2018
 
-Make sure you include the following in your readme.md file (doesnt
-need to be done until tomorrow)
-
-
-An embedded video demo
-
 The Team Name is Dave
 The project name is fileTransfer
 Them member David Kenny c16765119
