@@ -86,9 +86,7 @@ public class Client {
 			
 			System.out.println("Please enter the name of the file your looking for");
 			fileName = reader.readLine(); // get the file name
-			
-			System.out.println("Please enter the socket to use if unsure enter 9090");
-			
+						
 			Socket socket = new Socket(IPAddress, 9090); // create a socket using port 9090
 			InputStream inputByte = socket.getInputStream(); // Create the inputStream linking it to the socket
 			BufferedInputStream input = new BufferedInputStream(inputByte);
