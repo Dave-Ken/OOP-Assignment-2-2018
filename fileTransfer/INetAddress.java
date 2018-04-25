@@ -16,13 +16,10 @@ public class INetAddress {
 		
 		try {
 			System.out.println("Enter server domain name");
-			String name = " ";
-			InputStreamReader input = new InputStreamReader(System.in);
-			BufferedReader reader = new BufferedReader(input);
-			name = reader.readLine();
-		
+			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+			
 			// get any computer on the Internet's details and print info
-			InetAddress address2 = InetAddress.getByName(name);
+			InetAddress address2 = InetAddress.getByName(reader.readLine());
 			System.out.println("The IP address for " + address2.getHostName() + " is " +address2.getHostAddress());
 			Tools.toolsMenu();
 		}// End try

@@ -11,6 +11,7 @@ package fileTransfer;
 public class ValadateIPAddress {
 		
 	public static boolean checkIP(String IPAddress) {
+		// split the IP address up by . to ensure that the iP is long enough
 		String []numbers = IPAddress.split("\\.");
 		
 		if(numbers.length != 4) {
@@ -18,7 +19,7 @@ public class ValadateIPAddress {
 			return false;
 		}//	End if
 		for(String str: numbers) {
-			
+			//Ensure the IP address is within the valid IP range
 			int i = Integer.parseInt(str);
 			if((i < 0 || i > 255)) {
 				System.out.println("The IP address " + IPAddress + " is not valid ");
@@ -28,5 +29,4 @@ public class ValadateIPAddress {
 		System.out.println("The IP address " + IPAddress + " is valid ");
 		return true;
 	}//	End checkIP
-
 }//	ValadateIPAddress

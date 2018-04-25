@@ -16,15 +16,9 @@ public class RemotePortScanner {
 	public static void remotePortScanner() {
 		
 		//	Creating the buffer stream that reads the users input
-		/*
-		InputStreamReader input = new InputStreamReader(System.in);
-		BufferedReader reader = new BufferedReader(input);
 		
-		Or
-		*/
 		
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));		
 		
 		String targetIP = " ";	//	Store the target IP address
 		int fromPort = 0;		//	Store the starting port
@@ -40,9 +34,7 @@ public class RemotePortScanner {
 			System.out.println("Cannot read the target IP address " + e.toString());
 		}//End catch
 		
-		
 		// Find the first port 
-		
 		// Boolean value used to validate open ports
 		boolean isValid = false;
 		

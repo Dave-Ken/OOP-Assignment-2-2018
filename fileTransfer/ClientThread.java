@@ -29,7 +29,6 @@ public class ClientThread extends Thread{
 		
 		try {
 			
-			
 			//	Create the BufferedReader
 			reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			//	Creating the output Buffered Reader
@@ -41,18 +40,19 @@ public class ClientThread extends Thread{
 			+ socket.getInetAddress().getHostAddress());
 			//File file = new File(fileName);
 			
+			// The directory that the files are stored in
 			String rootDirectory = "D:\\rootDirectory";
             File file = new File(rootDirectory + "\\" + fileName);
 			// Verify that the file exists
 			if(!file.exists()) {
 				
 				// if file doesn't exist send 0 and close the connection
-				byte code = (byte)0;
+				byte code = ((byte)0);
 				output.write(code);
-				closeConnection();
-				
+				closeConnection();	
 			}//	End if
 			else {
+				
 				//	if the file exists write a 1 to the client & send the file
 				output.write((byte)1);
 				//	Create a BufferedInputStream variable
@@ -61,28 +61,25 @@ public class ClientThread extends Thread{
 				byte [] buffer = new byte[1024];
 				
 				int byteRead = 0;
+				// continue sending bytes from the file until reaching the end of file char -1
 				while((byteRead = fileReader.read(buffer)) != -1) {
 					
 					output.write(buffer, 0, byteRead);
 					//System.out.println(byteRead);
 					output.flush();
-					
 				}//	End while
-				
-				closeConnection();
-				
-			}//	End else
-			
+				closeConnection();	
+			}//	End else	
 		}//	End try
 		
 		catch(Exception e) {
 			
 			System.out.println(e.toString());
-		}//	End Exception catch
-		
+		}//	End Exception catch		
 	}//	End run
 	
 	
+	// close connections 
 	public void closeConnection() {
 		
 		try {
@@ -101,17 +98,11 @@ public class ClientThread extends Thread{
 			
 			if(output != null) {
 				socket.close();
-			}//	 End if
-					
+			}//	 End if			
 		}//	End try
 		
 		catch(Exception e) {
 			System.out.println(e.toString());
 		}//	End Exception catch
-		
-		
 	}//	End closeConnection
-	
-	
 }//	End ClientThread
-

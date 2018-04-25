@@ -15,11 +15,9 @@ import java.net.*;
 
 public class Server {
 	
-	
 	public static void main(String[] args) {
 		
 		try {
-			
 			//initialize the server socket class
 			ServerSocket serverSocket = new ServerSocket(9090);
 			
@@ -33,10 +31,8 @@ public class Server {
 				 //	Create the client thread
 				ClientThread clientThread = new ClientThread(clientSocket);
 				//	Start the client thread
-				clientThread.start(); 
-				
+				clientThread.start(); 	
 			}//	End while
-			
 			serverSocket.close();
 		}//	End try
 		
@@ -47,8 +43,5 @@ public class Server {
 		catch(Exception e){
 			System.out.println(e.toString());
 		}//	End Exception catch
-		
-		
 	}//	End main
-
 }//	End Server

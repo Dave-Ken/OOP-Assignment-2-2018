@@ -1,6 +1,6 @@
 /**
  * 
- * how to ping a remote node using java
+ * how to ping a remote device using java
  * 
  * 
  * Author Dave Kenny
@@ -21,8 +21,7 @@ public class Ping {
 			 
 			System.out.println("Enter an IP address to ping");
 			String ping = "";
-			InputStreamReader input = new InputStreamReader(System.in);
-			BufferedReader reader = new BufferedReader(input);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		    ping = reader.readLine();
 		    
 			String hostAddress = ping;
@@ -41,7 +40,7 @@ public class Ping {
 			
 			//	Reading out put stream of command
 			while((commandOutput = inputStream.readLine()) != null) {
-				//System.out.println(commandOutput); //	Displays the output of the CMD
+				//System.out.println(commandOutput); //	Displays the output of the CMD more info than needed
 				
 				if(commandOutput.contains("Destination host unreachable")) {
 					isReachable = false;
@@ -53,14 +52,13 @@ public class Ping {
 			}//	End if
 			else {
 				System.out.println("Host is unreachable");
-			}//	End else	
-			
+			}//	End else		
 		}//	End try
+		
 		catch(Exception e) {
 			System.out.println(e.toString());
 		}//	End catch
 		// Go back to the toolsMenu
 		Tools.toolsMenu();
 	}//	End main
-
 }//	End Ping

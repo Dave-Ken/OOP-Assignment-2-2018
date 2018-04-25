@@ -28,10 +28,8 @@ public class LocalPortScanner {
 			catch(IOException e) {
 				System.out.println("Port " + port + " is open");
 			}//	End catch
-			port++;
-			
+			port++;		
 		}//	End while
 		Tools.scannerMenu();
 	}//	End localPortScanner
-
 }//	End LocalPortScanner
